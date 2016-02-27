@@ -3,13 +3,13 @@ body {
    background: black;
 }
 .space {
-   width: 100%;
+   /*width: 100%;*/
    height: 150%;
    position: fixed;
    top: 0;
    left: 0;
-   /*overflow: hidden;*/
-   transform: translateY(-0%);
+   overflow: hidden;
+   /*transform: translateY(-0%);*/
 }
 .cell {
    float: left;
@@ -17,6 +17,8 @@ body {
    box-sizing: border-box;
    padding: 0 3px;
    transform-origin: 50% 100%;
+
+   transition: all 200ms;
 
    /*animation: wave 600ms infinite;*/
 }
