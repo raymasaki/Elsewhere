@@ -7,7 +7,7 @@ $(document).ready(function() {
    $('.space').width(W);
 
    // number of cells per row and columns
-   var numX = 6;
+   var numX = 5;
 
    // if smaller than 1000 && 700
    if (W < 1000 && W > 700) {
@@ -41,29 +41,43 @@ $(document).ready(function() {
       $cell.append('<img src="images/elsewhere.svg">');
 
       $('.space').append($cell);
-      var pos = {x : $cell.position().left + oW/2, y : $cell.position().top + oH/2};
+      var pos = {
+         x: $cell.position().left + oW / 2,
+         y: $cell.position().top + oH / 2
+      };
 
       cellPos.push(pos);
    }
 
-   $(window).mousemove(function(e) {
-
-      // turns off transition when mouse is in window
-      $('.cell').css('transition', 'none');
-
-      for (var i = 0; i < numTotal; i++) {
-         var X = cellPos[i].x - (e.pageX);
-         var Y = cellPos[i].y - (e.pageY - 200);
-         var angle = Math.atan(Y/X) * 180/Math.PI;
-
-         $( 'div[num=' + i +']' ).css('transform', 'rotate(' + angle + 'deg)');
-      }
-
+   $('.cell').velocity({
+      opacity: [1, 0]
+   }, {
+      duration: 500,
+      delay: 500
    });
+
+   window.setTimeout(function() {
+
+      $(window).mousemove(function(e) {
+
+         // turns off transition when mouse is in window
+         $('.cell').css('transition', 'none');
+
+         for (var i = 0; i < numTotal; i++) {
+            var X = cellPos[i].x - (e.pageX);
+            var Y = cellPos[i].y - (e.pageY - H/numX);
+            var angle = Math.atan(Y / X) * 180 / Math.PI;
+
+            $('div[num=' + i + ']').css('transform', 'rotate(' + angle + 'deg)');
+         }
+
+      });
+
+   }, 1200);
 
    // if mouse is outside of window make it reset angle
    $(document).mouseleave(function() {
-      $('.cell').css('transition', 'all 250ms');
+      $('.cell').css('transition', 'all 300ms');
 
       $('.cell').css('transform', 'rotate(0deg)');
    });
