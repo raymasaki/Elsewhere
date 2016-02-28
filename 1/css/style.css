@@ -1,9 +1,10 @@
 body {
-   cursor: none;
    background: black;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
 }
 .space {
-   /*width: 100%;*/
+   cursor: pointer;
    height: 150%;
    position: fixed;
    top: -5%;

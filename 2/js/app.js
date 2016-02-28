@@ -44,6 +44,14 @@ $(document).ready(function() {
       // debugger;
    }
 
+   $('.cell').velocity({
+      opacity: [1, 0]
+   }, {
+      duration: 500,
+      delay: 500
+   });
+
+
    $(window).mousemove(function(e) {
 
 
@@ -64,6 +72,10 @@ $(document).ready(function() {
          // debugger;
       }
 
+   });
+
+   $('body').click(function() {
+      window.location.href = "../1/index.html";
    });
 
 });

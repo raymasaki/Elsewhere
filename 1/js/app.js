@@ -82,4 +82,8 @@ $(document).ready(function() {
       $('.cell').css('transform', 'rotate(0deg)');
    });
 
+   $('.space').click(function() {
+      window.location.href = "../2/index.html";
+   });
+
 });
