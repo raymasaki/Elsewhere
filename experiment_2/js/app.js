@@ -48,18 +48,14 @@ $(document).ready(function() {
 
 
       // the further mouseXY is from cXY the lighter the shadow
-      // var diff = 5;
+      var diff = 5;
 
       for (var i = 0; i < numTotal; i++) {
 
          var dX = cellPos[i].x - e.pageX;
          var dY = cellPos[i].y - e.pageY;
-         var diff = (Math.abs(dX) + Math.abs(dY)) / 1000;
 
-         // console.log(diff);
-         // var blur = Math.abs(dX * dY) / 1000;
-
-         $('div[num=' + i + '] > .box > p').css('text-shadow', dX/10 + 'px ' + dY/10 + 'px ' + Math.abs(dX/10) + 'px rgba(50, 50, 50, ' + diff * 1.5 + ')');
+         $('div[num=' + i + '] > .box > p').css('text-shadow', dX/10 + 'px ' + dY/10 + 'px ' + Math.abs(dX/10) + 'px rgba(75, 75, 75, ' + diff + ')');
 
          // debugger;
       }
