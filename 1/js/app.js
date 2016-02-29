@@ -65,7 +65,7 @@ $(document).ready(function() {
 
          for (var i = 0; i < numTotal; i++) {
             var X = cellPos[i].x - (e.pageX);
-            var Y = cellPos[i].y - (e.pageY - H/numX);
+            var Y = cellPos[i].y - (e.pageY / 1.4);
             var angle = Math.atan(Y / X) * 180 / Math.PI;
 
             $('div[num=' + i + ']').css('transform', 'rotate(' + angle + 'deg)');
@@ -83,7 +83,7 @@ $(document).ready(function() {
    });
 
    $('.space').click(function() {
-      window.location.href = "../2/index.html";
+      window.location.href = "../2/";
    });
 
 });

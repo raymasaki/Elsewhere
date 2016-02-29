@@ -2,6 +2,8 @@ body {
    background: black;
    -webkit-font-smoothing: antialiased;
    -moz-osx-font-smoothing: grayscale;
+   font-size: 18px;
+   line-height: 24px;
 }
 .space {
    cursor: pointer;

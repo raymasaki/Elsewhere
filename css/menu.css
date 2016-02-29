@@ -5,6 +5,12 @@
 }
 nav {
    padding-bottom: 24px;
+
+   font-family: times, serif;
+   font-weight: normal;
+
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
 }
 nav ul {
    display: inline;
@@ -19,6 +25,11 @@ nav a {
 }
 .desc {
    padding: 18px 0;
+   font-family: times, serif;
+   font-weight: normal;
+
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
 }
 .desc a {
    color: white;
@@ -32,7 +43,10 @@ nav a {
    position: absolute;
    z-index: 50;
    color: white;
-   padding: 12px 18px;
+   padding: 12px 18px 10px;
+
+   font-size: 16px;
+   line-height: 22px;
 }
 .menu {
    background: black;
@@ -57,6 +71,7 @@ nav a {
    width: 48%;
    float: right;
    background-size: cover;
+   background-position: center center;
    height: 100%;
 }
 .info {

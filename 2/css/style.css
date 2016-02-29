@@ -2,7 +2,9 @@ body {
    font-family: arial, sans-serif;
    font-weight: bold;
    font-size: 36px;
-   cursor: pointer;
+
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
 }
 
 .space {
@@ -11,6 +13,8 @@ body {
    height: 100%;
    top: 0;
    left: 0;
+
+   cursor: pointer;
 }
 
 .cell {
