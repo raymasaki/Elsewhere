@@ -1,0 +1,47 @@
+body {
+   background: black;
+}
+
+.space {
+   width: 100%;
+   height: 100%;
+   position: fixed;
+   overflow: hidden;
+}
+
+.word {
+   pointer-events: none;
+   color: white;
+   font-family: arial, sans-serif;
+   font-weight: bold;
+   letter-spacing: -2px;
+   font-size: 72px;
+   -webkit-text-stroke-width: 2px;
+   -webkit-text-stroke-color: black;
+
+   position: absolute;
+   animation: fade 2s normal forwards;
+   animation-delay: 500ms;
+
+   transform-origin: center;
+}
+
+@keyframes fade {
+   0% {
+      color: white;
+      transform: translateY(0px);
+   }
+   25%{
+      transform: translateY(-100px);
+   }
+   50%{
+      transform: translateY(100px);
+   }
+   75%{
+      transform: translateY(-100px);
+   }
+   100% {
+      color: black;
+      transform: translateY(0px);
+   }
+}

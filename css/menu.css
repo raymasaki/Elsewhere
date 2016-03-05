@@ -2,6 +2,7 @@
    color: white;
    font-family: NimbusSanExt-Bol, "nimbus-sans-extended",sans-serif;
    line-height: 1em;
+   font-weight: bold;
 }
 nav {
    padding-bottom: 24px;
@@ -22,6 +23,7 @@ nav a {
    color: white;
    font-family: NimbusSanExt-Bol, "nimbus-sans-extended",sans-serif;
    text-decoration: none;
+   font-weight: bold;
 }
 .desc {
    padding: 18px 0;
@@ -44,6 +46,7 @@ nav a {
    z-index: 50;
    color: white;
    padding: 12px 18px 10px;
+   font-weight: bold;
 
    font-size: 16px;
    line-height: 22px;

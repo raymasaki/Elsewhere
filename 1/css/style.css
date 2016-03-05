@@ -12,7 +12,6 @@ body {
    top: -5%;
    left: 0;
    overflow: hidden;
-   /*transform: translateY(-0%);*/
 }
 .cell {
    opacity: 0;
@@ -24,8 +23,6 @@ body {
    transform-origin: 50% 100%;
 
    transition: all 200ms;
-
-   /*animation: wave 600ms infinite;*/
 }
 .cell img {
    width: 100%;

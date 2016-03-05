@@ -74,7 +74,6 @@ $(document).ready(function() {
       });
 
    }, 1200);
-
    // if mouse is outside of window make it reset angle
    $(document).mouseleave(function() {
       $('.cell').css('transition', 'all 300ms');
