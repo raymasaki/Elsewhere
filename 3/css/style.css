@@ -1,5 +1,35 @@
 body {
    background: black;
+   overflow: hidden;
+   font-kerning: normal;
+}
+
+input {
+   font-family: arial, sans-serif;
+
+   background: transparent;
+   border: none;
+   width: 100%;
+   height: 90px;
+   color: white;
+   font-size: 72px;
+   line-height: 72px;
+   text-align: center;
+   z-index: 100;
+   outline: none;
+
+   position: absolute;
+   top: 50%;
+   transform: translateY(-50%);
+}
+
+::-webkit-input-placeholder {
+   font-family: arial, sans-serif;
+
+   color: white;
+   font-size: 72px;
+   line-height: 72px;
+   text-align: center;
 }
 
 .space {
@@ -21,7 +51,7 @@ body {
 
    position: absolute;
    animation: fade 2s normal forwards;
-   animation-delay: 500ms;
+   animation-delay: 300ms;
 
    transform-origin: center;
 }
@@ -29,19 +59,19 @@ body {
 @keyframes fade {
    0% {
       color: white;
-      transform: translateY(0px);
+      transform: translateY(0px) scale(1);
    }
    25%{
-      transform: translateY(-100px);
+      transform: translateY(-100px) scale(1);
    }
    50%{
-      transform: translateY(100px);
+      transform: translateY(100px) scale(1);
    }
    75%{
-      transform: translateY(-100px);
+      transform: translateY(-100px) scale(.75);
    }
    100% {
       color: black;
-      transform: translateY(0px);
+      transform: translateY(0px) scale(.5);
    }
 }

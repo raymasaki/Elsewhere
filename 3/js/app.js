@@ -1,33 +1,40 @@
 $(document).ready(function() {
 
-   // var words = $('#words').val();
-   //
-   // $('#words').keypress(function(e){
-   //
-   //    words = $('#words').val();
-   //
-   //    // if enter is pressed triggers search-button click event
-   //    if(e.which == 13) {
-   //       $('#words').hide();
-   //    }
-   // });
+   var input = $('#word-input');
+   input.focus();
 
+   $('#word-input').keypress(function(e){
+
+      // if enter is pressed triggers search-button click event
+      if(e.which == 13) {
+         words = $('#word-input').val();
+         $('#word-input').hide();
+
+         console.log(words);
+
+         wordSnake();
+      }
+   });
+
+});
+
+var words = $('#word-input').val();
+var fontSize = W / 16;
+
+function wordSnake() {
    var W = $(window).width();
-   var fontSize = W / 16;
 
-
-   var words = 'If Young Metro don\’t trust you I\’m gon\’ shoot you.';
+   // var words = prompt("Enter some words");
+   // var words = 'If Young Metro don\’t trust you I\’m gon\’ shoot you.';
 
    var wordArr = words.split(' ');
 
    var curr = 0;
    var currWord = null;
-   // console.log(words);
 
    window.setInterval(function() {
       currWord = wordArr[curr % wordArr.length];
       curr++;
-      // console.log(currWord);
    }, 500);
 
    $(window).mousemove(function(e) {
@@ -50,5 +57,4 @@ $(document).ready(function() {
       }, 2000);
 
    });
-
-});
+}
