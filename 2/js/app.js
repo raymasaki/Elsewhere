@@ -62,13 +62,13 @@ $(document).ready(function() {
 
       for (var i = 0; i < numTotal; i++) {
 
-         var dX = cellPos[i].x - e.pageX;
-         var dY = cellPos[i].y - e.pageY;
+         var dX = cellPos[i].x - e.clientX;
+         var dY = cellPos[i].y - e.clientY;
          var diff = (Math.abs(dX) + Math.abs(dY)) / 1000;
          var blur = Math.sqrt( Math.pow(dX, 2) + Math.pow(dY,2) );
 
          $('div[num=' + i + '] > .box > p').css({
-            'text-shadow': dX/10 + 'px ' + dY/10 + 'px ' + blur/20 + 'px rgba(50, 50, 50, ' + diff * 1.5 + ')'
+            'text-shadow': dX/10 + 'px ' + dY/10 + 'px ' + blur/25 + 'px rgba(50, 50, 50, ' + diff * 1.5 + ')'
          });
 
       }

@@ -18,8 +18,8 @@ $(document).ready(function() {
          $('.cell').css('transition', 'none');
 
          for (var i = 0; i < numTotal; i++) {
-            var X = cellPos[i].x - (e.pageX);
-            var Y = cellPos[i].y - (e.pageY / 1.4);
+            var X = cellPos[i].x - (e.clientX);
+            var Y = cellPos[i].y - (e.clientY / 1.4);
             var angle = Math.atan(Y / X) * 180 / Math.PI;
 
             $('div[num=' + i + ']').css('transform', 'rotate(' + angle + 'deg)');
