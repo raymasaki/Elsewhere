@@ -1,5 +1,7 @@
 $(document).ready(function() {
 
+   $('#menu').load('../menu.html');
+
    var input = $('#word-input');
    input.focus();
 
@@ -56,5 +58,9 @@ function wordSnake() {
          $word.remove();
       }, 2000);
 
+   });
+
+   $('.space').click(function() {
+      window.location.href = "../1/";
    });
 }

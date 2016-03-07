@@ -1,5 +1,7 @@
 $(document).ready(function() {
 
+   $('#menu').load('../menu.html');
+
    // window Width & Height
    var W = $(window).width();
    var H = $(window).height();

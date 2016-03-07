@@ -37,6 +37,8 @@ input {
    height: 100%;
    position: fixed;
    overflow: hidden;
+
+   cursor: pointer;
 }
 
 .word {

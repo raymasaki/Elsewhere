@@ -1,5 +1,7 @@
 $(document).ready(function() {
 
+   $('#menu').load('../menu.html');
+
    // window Width & Height
    var W = $(window).width();
    var H = $(window).height();
@@ -74,8 +76,8 @@ $(document).ready(function() {
 
    });
 
-   $('body').click(function() {
-      window.location.href = "../1/";
+   $('.space').click(function() {
+      window.location.href = "../3/";
    });
 
 });

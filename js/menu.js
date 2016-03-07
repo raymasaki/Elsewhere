@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-   $('#menu').load('menu.html');
+   // $('#menu').load('menu.html');
 
    var menuH = $('.menu').height();
 
@@ -36,9 +36,10 @@ $(document).ready(function() {
       });
    });
 
+   var curr = index + 1;
+
    $('.ex_link').each(function(index) {
       // debugger;
-      var curr = index + 1;
 
       $(this).mouseover(function() {
          $('.preview').css('background-image', 'url(../thumb/' + curr + '.jpg)');
