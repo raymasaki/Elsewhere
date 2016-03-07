@@ -1,12 +1,11 @@
 $(document).ready(function() {
 
-   // $('#menu').load('menu.html');
-
-   var menuH = $('.menu').height();
-
    $('.menu').css('transform', 'translateY(-' + menuH + 'px)');
 
    $('.menu-link').mouseover(function() {
+      resetMenu();
+      $('.menu-link').css('point-events', 'none');
+
       $('.menu-link').velocity({
          translateY: '-24px'
       },{
@@ -21,6 +20,8 @@ $(document).ready(function() {
    });
 
    $('.menu').mouseleave(function() {
+      resetMenu();
+
       $('.menu-link').velocity({
          translateY: [0, '-24px']
       },{
@@ -34,12 +35,22 @@ $(document).ready(function() {
       },{
          duration: 250
       });
+
+      $('.menu-link').css('point-events', 'all');
    });
 
-   var curr = index + 1;
+   $.preloadImages = function() {
+      for (var i = 0; i < arguments.length; i++) {
+      $("<img />").attr("src", arguments[i]);
+      }
+   };
 
    $('.ex_link').each(function(index) {
       // debugger;
+
+      var curr = index + 1;
+
+      $.preloadImages('../thumb/' + curr + '.jpg');
 
       $(this).mouseover(function() {
          $('.preview').css('background-image', 'url(../thumb/' + curr + '.jpg)');
@@ -50,4 +61,13 @@ $(document).ready(function() {
       });
    });
 
+   $( window ).resize(resetMenu);
+
 });
+
+var menuH = $('.menu').height();
+
+function resetMenu() {
+   menuH = $('.menu').height();
+   $('.menu').css('transform', 'translateY(-' + menuH + 'px)');
+}

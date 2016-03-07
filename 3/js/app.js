@@ -18,6 +18,10 @@ $(document).ready(function() {
       }
    });
 
+   $('.space').click(function() {
+      window.location.href = "../1/";
+   });
+
 });
 
 var words = $('#word-input').val();
@@ -58,9 +62,5 @@ function wordSnake() {
          $word.remove();
       }, 2000);
 
-   });
-
-   $('.space').click(function() {
-      window.location.href = "../1/";
    });
 }

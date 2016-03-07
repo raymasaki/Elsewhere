@@ -65,13 +65,12 @@ $(document).ready(function() {
          var dX = cellPos[i].x - e.pageX;
          var dY = cellPos[i].y - e.pageY;
          var diff = (Math.abs(dX) + Math.abs(dY)) / 1000;
+         var blur = Math.sqrt( Math.pow(dX, 2) + Math.pow(dY,2) );
 
-         // console.log(diff);
-         // var blur = Math.abs(dX * dY) / 1000;
+         $('div[num=' + i + '] > .box > p').css({
+            'text-shadow': dX/10 + 'px ' + dY/10 + 'px ' + blur/20 + 'px rgba(50, 50, 50, ' + diff * 1.5 + ')'
+         });
 
-         $('div[num=' + i + '] > .box > p').css('text-shadow', dX/10 + 'px ' + dY/10 + 'px ' + Math.abs(dX/10) + 'px rgba(50, 50, 50, ' + diff * 1.5 + ')');
-
-         // debugger;
       }
 
    });

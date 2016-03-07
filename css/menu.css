@@ -1,3 +1,30 @@
+.mobile {
+   width: 100vw;
+   height: 100vh;
+   background: black;
+   color: white;
+   position: fixed;
+   top: 0;
+   left: 0;
+   overflow: hidden;
+   z-index: 1000;
+
+   font-family: times, serif;
+   font-weight: normal;
+   font-size: 30px;
+   line-height: 36px;
+   letter-spacing: .01em;
+
+   padding: 12px 18px 10px;
+
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+}
+
+.mobile a.email {
+   color: white;
+}
+
 .logo {
    color: white;
    font-family: NimbusSanExt-Bol, arial, sans-serif;
@@ -82,4 +109,10 @@ nav a {
    box-sizing: border-box;
    width: 50%;
    float: left;
+}
+
+@media screen and (min-width: 700px) {
+  .mobile {
+    display: none;
+  }
 }

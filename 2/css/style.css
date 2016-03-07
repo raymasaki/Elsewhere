@@ -35,4 +35,5 @@ body {
 .cell > .box > p {
    /*color: transparent;*/
    pointer-events: none;
+   /*position: absolute;*/
 }

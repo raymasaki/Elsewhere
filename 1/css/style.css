@@ -20,7 +20,7 @@ body {
    margin-bottom: 8px;
    box-sizing: border-box;
    padding: 0 6px;
-   transform-origin: 50% 100%;
+   transform-origin: 50% 50%;
 
    transition: all 200ms;
 }
