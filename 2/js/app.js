@@ -29,6 +29,7 @@ $(document).ready(function() {
       var letter = ['E', 'L', 'S', 'E', 'W', 'H', 'E', 'R', 'E'];
       var $cell = $('<div class="cell">');
 
+      // puts the next letter in each cell
       $cell.css('width', oW + '%');
       $cell.css('height', W / numX + 'px');
       $cell.attr('num', i);
@@ -42,8 +43,6 @@ $(document).ready(function() {
       };
 
       cellPos.push(pos);
-
-      // debugger;
    }
 
    $('.cell').velocity({
@@ -55,10 +54,6 @@ $(document).ready(function() {
 
 
    $(window).mousemove(function(e) {
-
-
-      // the further mouseXY is from cXY the lighter the shadow
-      // var diff = 5;
 
       for (var i = 0; i < numTotal; i++) {
 

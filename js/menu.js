@@ -1,17 +1,23 @@
 $(document).ready(function() {
 
+   resetMenu();
+
+   // moves the menu outside the viewport
    $('.menu').css('transform', 'translateY(-' + menuH + 'px)');
 
    $('.menu-link').mouseover(function() {
       resetMenu();
+
       $('.menu-link').css('point-events', 'none');
 
+      // moves the info link outside viewport
       $('.menu-link').velocity({
          translateY: '-24px'
       },{
          duration: 250
       });
 
+      // moves menu into viewport
       $('.menu').velocity({
          translateY: [0, -menuH]
       },{
@@ -39,6 +45,7 @@ $(document).ready(function() {
       $('.menu-link').css('point-events', 'all');
    });
 
+   // preloads the menu images
    $.preloadImages = function() {
       for (var i = 0; i < arguments.length; i++) {
       $("<img />").attr("src", arguments[i]);
@@ -46,12 +53,13 @@ $(document).ready(function() {
    };
 
    $('.ex_link').each(function(index) {
-      // debugger;
 
       var curr = index + 1;
 
+      // preload current link image
       $.preloadImages('../thumb/' + curr + '.jpg');
 
+      // grabs the correct image on mouseover
       $(this).mouseover(function() {
          $('.preview').css('background-image', 'url(../thumb/' + curr + '.jpg)');
       });
@@ -61,6 +69,7 @@ $(document).ready(function() {
       });
    });
 
+   // on window resize reset menu values
    $( window ).resize(resetMenu);
 
 });

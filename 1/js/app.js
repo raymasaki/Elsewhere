@@ -11,35 +11,15 @@ $(document).ready(function() {
       delay: 500
    });
 
-   window.setTimeout(function() {
-      $(window).mousemove(function(e) {
-
-         // turns off transition when mouse is in window
-         $('.cell').css('transition', 'none');
-
-         for (var i = 0; i < numTotal; i++) {
-            var X = cellPos[i].x - (e.clientX);
-            var Y = cellPos[i].y - (e.clientY / 1.4);
-            var angle = Math.atan(Y / X) * 180 / Math.PI;
-
-            $('div[num=' + i + ']').css('transform', 'rotate(' + angle + 'deg)');
-         }
-
-      });
-   }, 1200);
-
    // if mouse is outside of window make it reset angle
    $(document).mouseleave(function() {
       $('.cell').css('transition', 'all 300ms');
-
       $('.cell').css('transform', 'rotate(0deg)');
    });
 
    $('.space').click(function() {
       window.location.href = "../2/";
    });
-
-   // $( window ).resize(createCells);
 
 });
 
@@ -108,4 +88,26 @@ function createCells() {
 
       cellPos.push(pos);
    }
+   mouseMove();
+}
+
+function mouseMove() {
+   window.setTimeout(function() {
+      $(window).mousemove(function(e) {
+
+         // console.log(e.pageX, e.pageY);
+
+         // turns off transition when mouse is in window
+         $('.cell').css('transition', 'none');
+
+         for (var i = 0; i < numTotal; i++) {
+            var X = cellPos[i].x - (e.pageX);
+            var Y = cellPos[i].y - (e.pageY);
+            var angle = Math.atan(Y / X) * 180 / Math.PI;
+
+            $('div[num=' + i + ']').css('transform', 'rotate(' + angle + 'deg)');
+         }
+
+      });
+   }, 1200);
 }
