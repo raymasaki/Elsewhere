@@ -1,0 +1,52 @@
+body {
+   background: black;
+   overflow: hidden;
+   font-kerning: normal;
+   font-family: arial;
+}
+
+.start {
+   color: white;
+   font-size: 24px;
+   text-align: center;
+   width: 100%;
+   pointer-events: none;
+   opacity: 1;
+   letter-spacing: 1px;
+   box-sizing: border-box;
+   padding-bottom: 32px;
+   position: absolute;
+   bottom: 0;
+}
+
+.fade {
+   animation: fade 500ms normal forwards;
+}
+
+.letter {
+   color: white;
+   display: block;
+   position: absolute;
+   top: -5%;
+   left: 0;
+   text-align: center;
+   width: 10%;
+
+   font-family: arial;
+   text-transform: uppercase;
+
+   animation: rotate 800ms normal forwards;
+}
+
+#input {
+   opacity: 0;
+}
+
+@keyframes fade {
+   0%{
+      opacity: 1;
+   }
+   100% {
+      opacity: 0;
+   }
+}
