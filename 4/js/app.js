@@ -6,34 +6,37 @@ $(document).ready(function() {
    var input = $('#input');
    input.focus();
 
+   // keeps focus on input box
    $('#input').bind('focusout', function(e) {
       e.preventDefault();
       $(this).focus();
    });
 
+   // when first key is pressed hard start text
    $('#input').keypress(function(event) {
       $('.start').addClass('fade');
    });
 
    $('#input').keyup(function(event) {
 
+      // each letter moves across the screen
       if (moveF === true && placement < 9) {
          placement++;
       } else if (placement === 9) {
          moveF = false;
          placement--;
-         // console.log(moveF);
       } else if (moveF === false && placement > 0) {
          placement--;
       } else if (placement === 0) {
          moveF = true;
          placement++;
-         // console.log(moveF);
       }
 
-      // console.log(placement, (placement % 10 * 10) + '%');
-
       createLetter();
+   });
+
+   $('.space').click(function() {
+      window.location.href = "../1/";
    });
 
 });
@@ -47,11 +50,13 @@ function createLetter() {
 
    var $space = $('.space');
 
-   for (var i = 0; i < 15; i++) {
+   var repeat = 15;
+
+   for (var i = 0; i < repeat; i++) {
       var $letter = $('<div class="letter">');
       var shading = -5 - i * 1.5;
-      var gray = 255 - (i * 17);
-      var z = 15 - i;
+      var gray = 255 - (i * 255/repeat);
+      var z = repeat - i;
 
       $letter.css({
          'font-size': fontSize,
@@ -70,10 +75,11 @@ function createLetter() {
       $space.append($letter);
 
       $letter.velocity({
-         translateY: ['140vh', '-5%']
+         translateY: ['140vh', '-5vh']
       }, {
-         duration: 900,
-         easing: 'easeInSine'
+         duration: 1000,
+         easing: 'easeInSine',
+         complete: function(elements) { $(this).remove(); }
       });
    }
 
