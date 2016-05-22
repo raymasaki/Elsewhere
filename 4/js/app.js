@@ -36,7 +36,7 @@ $(document).ready(function() {
    });
 
    $('.space').click(function() {
-      window.location.href = "../1/";
+      window.location.href = "../5/";
    });
 
 });
