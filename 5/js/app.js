@@ -4,23 +4,41 @@ $(document).ready(function() {
 
     $('#menu').load('../menu.html');
 
-    startTyping();
+    // preloads the images
+    $.preloadImages = function() {
+        for (var i = 0; i < arguments.length; i++) {
+            $("<img />").attr("src", arguments[i]);
+        }
+    };
+
+    $.each(allChar, function(i, currArr) {
+        $.each(currArr, function(j, currImg) {
+         //   console.log(currImg);
+            $.preloadImages('./images/' + currImg);
+        });
+    });
 
     window.setTimeout(function() {
-      $start.fadeOut(300, function() {
-         $(this).remove();
-      });
-   }, 3000);
+      startTyping();
+   }, 500);
+
+    window.setTimeout(function() {
+        $start.fadeOut(300, function() {
+            $(this).remove();
+        });
+    }, 3000);
 
     window.setTimeout(function() {
 
-      $(window).keydown(function(e) {
-         if (e.which == 8 || e.which == 46) {
-            console.log("delete");
+        $(window).keydown(function(e) {
 
-            $('.char').last().remove();
-         }
-      });
+            if (e.which == 8 || e.which == 46) {
+                e.preventDefault();
+                console.log("delete");
+
+                $('.char').last().remove();
+            }
+        });
 
         $(window).keypress(function(e) {
             var value = String.fromCharCode(e.keyCode).toLowerCase();
@@ -121,9 +139,9 @@ $(document).ready(function() {
     }, 3000);
 
 
-     $('.space').click(function() {
-         window.location.href = "../1/";
-     });
+    $('.space').click(function() {
+        window.location.href = "../1/";
+    });
 
 });
 
@@ -205,6 +223,8 @@ var yChar = makeArr("y", 6);
 var zChar = makeArr("z", 2);
 var periodChar = makeArr("period", 5);
 var spaceChar = makeArr("space", 4);
+
+var allChar = [aChar, bChar, cChar, dChar, eChar, fChar, gChar, hChar, iChar, jChar, kChar, lChar, mChar, nChar, oChar, pChar, qChar, rChar, sChar, tChar, uChar, vChar, wChar, xChar, yChar, zChar, periodChar, spaceChar];
 
 function makeArr(letter, num) {
     var charArr = [];

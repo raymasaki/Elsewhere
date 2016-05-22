@@ -6,11 +6,11 @@ body {
 }
 
 .space {
-   /*cursor: pointer;*/
+   cursor: pointer;
    width: 100%;
    height: 100%;
    position: absolute;
-   top: 0;
+   top: 44px;
    left: 0;
 }
 
