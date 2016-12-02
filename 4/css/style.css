@@ -44,7 +44,7 @@ body {
    font-family: arial;
    text-transform: uppercase;
 
-   animation: rotate 800ms normal forwards;
+   /*animation: fade 800ms normal forwards;*/
 }
 
 #input {
